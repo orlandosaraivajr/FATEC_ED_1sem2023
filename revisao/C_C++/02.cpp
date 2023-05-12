@@ -10,15 +10,15 @@ using namespace std;
 
 static int contador = 0;
 
+struct CadastroAluno {
+    string nome;
+    float nota_1;
+    float nota_2;
+};
+
 int main(int argc, char *argv[]){
 
     int x;
-
-    struct CadastroAluno {
-        string nome;
-        float nota_1;
-        float nota_2;
-    };
 
     CadastroAluno aluno;
     CadastroAluno *vetor_alunos;
