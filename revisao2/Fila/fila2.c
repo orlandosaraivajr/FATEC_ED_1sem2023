@@ -65,18 +65,32 @@ using namespace std;
  }
 
  void destruir(FILA no){
-/*TODO
-Desalocar todos os elementos da fila.
-*/
+    cout << endl<< endl;
+    FILA noProximo = no;
+    while(noProximo->prox != NULL){
+ 		cout << "| " << noProximo->valor << endl;
+        no = noProximo;
+        noProximo = no->prox;
+        no->prox = NULL;
+        free(no);
+ 	}
+    no = noProximo;
+    cout << "| " << no->valor << endl;
+    no->prox = NULL;
+    free(no);
+
  }
 
  int buscaFila(ELEMENTO ch, FILA no){
-     /*TODO
-     Buscar o elemento na fila. Exemplo:
-     [2] -> [4] -> [5] -> [3] -> [1] -> [8] ->
-     O valor 8 encontra-se na posicao 1 da fila
-
-     */
+     int cont = tamanhoFila(no);
+     while(no != NULL){
+         if (ch == no->valor) {
+             return cont;
+         }
+         cont--;
+         no = no->prox;
+     }
+     return cont;
 	 return 0;
  }
 
